@@ -14,5 +14,7 @@
 Route::get('/', function () {
     return view('index');
 });
-
+Route::get('/post/create', function(){
+    return view("create");
+});
 Route::get('/ytapi', "YoutubeController@api");

@@ -14,7 +14,11 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/post/create', function(){
-    return view("create");
-});
+
+Route::get('/post', "PostController@index");
+Route::get('/post/create', "PostController@create");
+Route::post('/post', "PostController@store");
+Route::get('/post/{post}', "PostController@show");
+
+
 Route::get('/ytapi', "YoutubeController@api");

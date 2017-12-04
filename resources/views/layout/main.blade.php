@@ -23,7 +23,6 @@
 
     @include("layout.nav")
 
-    <!-- Main Content -->
     @yield("content")
     <hr>
 

@@ -25,18 +25,21 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <form method="POST" action="/post">
                     {{ csrf_field() }}
+
+                    @include('layout.errors')
+
                     <div class="form-group row">
                         <label for="title" class="col-form-label">Title</label>
-                        <input type="title" class="form-control" id="title" name="title">
+                        <input type="title" class="form-control" id="title" name="title" required>
                     </div>
 
                     <div class="form-group row">
                         <label for="textarea1">Body</label>
-                        <textarea class="form-control" id="textarea1" rows="3" name="body"></textarea>
+                        <textarea class="form-control" id="textarea1" rows="3" name="body" required></textarea>
                     </div>
 
                     <div class="form-group row">
-                        <button type="submit" class="btn btn-primary">Publish</button>
+                        <button type="submit" class="btn btn-warning">Publish</button>
                     </div>
                 </form>
             </div>

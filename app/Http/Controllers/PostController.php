@@ -23,6 +23,11 @@ class PostController extends Controller
 
     public function store(Post $post){
 
+        $this->validate(request(), [
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
         Post::create([
             'title' => request('title'),
             'body' => request('body'),

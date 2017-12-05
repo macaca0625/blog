@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     //
     public function index() {
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'desc')->get();
 
         return view("post.index", compact('posts'));
     }
@@ -36,7 +36,7 @@ class PostController extends Controller
             'body' => request('body'),
         ]);
 
-        return redirect('/');
+        return redirect('/post');
     }
 
 

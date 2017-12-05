@@ -2,7 +2,7 @@
 
 @section("content")
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('https://picsum.photos/1900/1267?image=998')">
+<header class="masthead" style="background-image: url('https://picsum.photos/1900/1267?image=885')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -20,10 +20,10 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-
+            <a href="/post/create"><button type="button" class="btn btn-warning">Create</button></a>
             @foreach($posts as $post)
             <div class="post-preview">
-                <a href="post.html">
+                <a href="/post/{{ $post->id }}">
                     <h2 class="post-title">
                         {{ $post->title }}
                     </h2>
@@ -31,7 +31,7 @@
                         Problems look mighty small from 150 miles up
                     </h3>
                 </a>
-                <p class="post-meta">Posted by<a href="#">Start Bootstrap</a>on {{ $post->created_at }}</p>
+                <p class="post-meta">Posted by<a href="#"> Eason Tsai </a>on {{ $post->created_at }}</p>
             </div>
             <hr>
             @endforeach

@@ -46,7 +46,15 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto text-center">
-            <a href="{{$curl_url}}" target="_blank" class="">REQUEST</a>
+            <form method="GET" action="/ytapi">
+                <div class="form-group">
+                    <label for="youtube-id">youtube id</label>
+                    <input type="text" class="form-control" id="youtube-id" aria-describedby="emailHelp" placeholder="Enter youtube id" name="v">
+                    <small id="emailHelp" class="form-text text-muted">We'll fetch youtube info by the video id</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
             <hr />
             <div class="wrapper">
                 <div class="panel">
@@ -65,6 +73,11 @@
                                     <tr>
                                         <th scope="row">Video link</th>
                                         <td>https://www.youtube.com/watch?v={{ $res["items"][0]["id"] }}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">REQUEST</th>
+                                        <td>{{$curl_url}}</td>
                                     </tr>
 
                                     <tr>

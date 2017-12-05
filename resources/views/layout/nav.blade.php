@@ -6,16 +6,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/ytapi">YoutubeAPI</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/post">Posts</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
                 </li>
             </ul>
         </div>

@@ -2,7 +2,7 @@
 
 @section("content")
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('https://picsum.photos/1900/1267?image=998')">
+<header class="masthead" style="background-image: url('https://picsum.photos/1900/1267?image=579')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">

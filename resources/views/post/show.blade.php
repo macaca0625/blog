@@ -42,6 +42,11 @@
                         {{ csrf_field() }}
 
                         @include('layout.errors')
+
+                        <div class="form-group">
+                            <input type="test" name="name" placeholder="your name here" class="form-control" required>
+                        </div>
+
                         <div class="form-group">
                             <textarea name="body" class="form-control" placeholder="your comments here." required></textarea>
                         </div>
@@ -59,7 +64,7 @@
                     <ul class="list-group">
                         @foreach($post->comment as $comment)
                         <li class="list-group-item">
-                            <strong>{{ $comment->body }}</strong> - {{ $comment->created_at->diffForHumans() }}
+                            <strong>{{ $comment->body }}</strong> - by {{ $comment->name }}, {{ $comment->created_at->diffForHumans() }}
                         </li>
                         @endforeach
                     </ul>

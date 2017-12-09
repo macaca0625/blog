@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 Route::get('/post', "PostController@index");
 Route::get('/post/create', "PostController@create");
-Route::post('/post', "PostController@store");
 Route::get('/post/{post}', "PostController@show");
 
+Route::post('/post', "PostController@store");
+Route::post('/post/{post}/comments', "CommentController@store");
 
 Route::get('/ytapi', "YoutubeController@api");

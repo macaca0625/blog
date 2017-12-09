@@ -38,9 +38,12 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <form class="" method="POST" action="/post/{{ $post->id }}/comments">
+
                         {{ csrf_field() }}
+
+                        @include('layout.errors')
                         <div class="form-group">
-                            <textarea name="body" class="form-control" placeholder="your comments here."></textarea>
+                            <textarea name="body" class="form-control" placeholder="your comments here." required></textarea>
                         </div>
 
                         <div class="form-group">

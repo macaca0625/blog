@@ -1,3 +1,7 @@
+
 @foreach($errors->all() as $error)
-    <div class="form-group row alert alert-danger" role="alert">{{ $error }}</div>
+    <!-- put this in form block -->
+    <div class="form-group">
+        <div class="form-controll alert alert-danger">{{ $error }}</div>
+    </div>
 @endforeach

@@ -7,3 +7,30 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// post.index
+ul.pagination li {
+    margin: 0px 10px
+}
+
+// post.show
+.post-content {
+    margin: 50px 0px;
+}
+
+// youtube-api
+h1 {
+    text-align: center;
+    margin: 50px auto;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+#player {
+    width: 550px;
+    margin: 0 auto;
+}
+.text-center {
+    text-align: center;
+}

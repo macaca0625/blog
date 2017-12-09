@@ -9,24 +9,7 @@
 @endphp
 
 @section("content")
-<!-- style -->
-<style type="text/css">
-    h1 {
-        text-align: center;
-        margin: 50px auto;
-    }
-    .wrapper {
-        width: 90%;
-        margin: 0 auto;
-    }
-    #player {
-        width: 550px;
-        margin: 0 auto;
-    }
-    .text-center {
-        text-align: center;
-    }
-</style>
+
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('{{$heroPic}}')">
     <div class="overlay"></div>

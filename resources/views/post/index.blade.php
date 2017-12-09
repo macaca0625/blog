@@ -2,12 +2,6 @@
 
 @section("content")
 
-<style type="text/css">
-    ul.pagination li {
-        margin: 0px 10px
-    }
-</style>
-
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('https://picsum.photos/1900/1267?image=885')">
     <div class="overlay"></div>

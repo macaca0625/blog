@@ -16,4 +16,8 @@ class Post extends Model
     public function addComment(){
         $this->comment()->create(request()->all());
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

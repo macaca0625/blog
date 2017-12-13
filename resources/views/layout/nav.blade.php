@@ -14,9 +14,20 @@
                 </li>
 
                 @if(Auth::check())
+
                 <li class="nav-item ml-auto">
-                    {{ Auth::user()->name() }}
+                    <a href="">Hi, {{ Auth::user()->name }}</a>
                 </li>
+
+                <li class="nav-item ml-auto">
+                    <a href="/logout">Logout</a>
+                </li>
+                @else
+
+                <li class="nav-item ml-auto">
+                    <a href="/login">Login</a>
+                </li>
+
                 @endif
             </ul>
         </div>

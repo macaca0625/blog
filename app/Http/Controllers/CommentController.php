@@ -10,6 +10,10 @@ use App\Comment;
 
 class CommentController extends Controller
 {
+    public function __contruct() {
+        $this->middleware('auth')->except(['show']);
+    }
+
     public function store(Post $post){
 
         $this->validate(request(), [
@@ -17,7 +21,13 @@ class CommentController extends Controller
             'body' => 'required|min:2'
         ]);
 
-        $post->addComment();
+        Comment::Create([
+            'user_id' => auth()->id(),
+            'post_id' => $post->id,
+            'name' => request('name'),
+            'body' => request('body'),
+        ]);
+
 
         return back();
     }

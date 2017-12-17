@@ -9,7 +9,7 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
                     <h1>{{ $post->title }}</h1>
-                    <p class="post-meta">Eason Tsai, {{ $post->created_at->toFormattedDateString() }}</p>
+                    <p class="post-meta">{{ $post->user->name }}, {{ $post->created_at->toFormattedDateString() }}</p>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                     {!! nl2br($post->body) !!}
                 </div>
 
-                <p class="post-meta">Posted by<a href="#"> Eason Tsai </a>on {{ $post->created_at->toFormattedDateString() }}</p>
+                <p class="post-meta">Posted by<a href="#"> {{ $post->user->name }} </a>on {{ $post->created_at->toFormattedDateString() }}</p>
             </div>
 
             <hr>
@@ -42,7 +42,6 @@
                         {{ csrf_field() }}
 
                         @include('layout.errors')
-
                         <div class="form-group">
                             <input type="test" name="name" placeholder="your name here" class="form-control" required>
                         </div>

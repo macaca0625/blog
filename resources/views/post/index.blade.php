@@ -20,7 +20,7 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-md-8">
             <a href="/post/create"><button type="button" class="btn btn-warning">Create</button></a>
             @foreach($posts as $post)
             <div class="post-preview">
@@ -32,7 +32,7 @@
 
                     </h3>
                 </a>
-                <p class="post-meta">Posted by<a href="#"> Eason Tsai </a>on {{ $post->created_at->diffForHumans() }}</p>
+                <p class="post-meta">Posted by<a href="#"> {{ $post->user->name }} </a>on {{ $post->created_at->diffForHumans() }}</p>
             </div>
             <hr>
             @endforeach
@@ -41,6 +41,25 @@
             <div class="clearfix">
                 {{ $posts->links() }}
             </div>
+        </div>
+        <div class="col-md-4">
+            <h2 class="post-title">Archives</h2>
+            <ul>
+                @foreach($archives as $archive)
+
+                    <a href="?month={{ $archive['month'] }}&year={{ $archive['year'] }}"><li>{{ $archive['month'] }}, {{ $archive['year'] }}({{ $archive['published'] }})</li></a>
+
+                @endforeach
+            </ul>
+
+            <h2 class="post-title">Latest</h2>
+            <ul>
+                @foreach($latestPosts as $post)
+
+                    <a href="{{ $post['id'] }}"><li>{{ $post['title'] }}</li></a>
+
+                @endforeach
+            </ul>
         </div>
     </div>
 </div>

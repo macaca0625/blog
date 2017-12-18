@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Post;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,9 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function($view){
-            $view->with('latestPosts', Post::latestPosts());
-        });
+        //
     }
 
     /**
@@ -29,3 +26,4 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 }
+

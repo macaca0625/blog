@@ -4,31 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Repositories\Posts as PostsRepo;
 use Carbon\Carbon;
 
 class PostController extends Controller
 {
+    protected $postsRepo;
+
     public function __contruct()
     {
         $this->middleware('auth')->except(['index', 'show']);
     }
 
-    public function index()
+    public function index(PostsRepo $postsRepo)
     {
-        $posts = Post::latest()
-            ->filter([
-                'month' => request()->month,
-                'year' => request()->year,
-            ])
-            ->simplePaginate(5);
+        $showPosts = $postsRepo->showPosts();
+        $archives = $postsRepo->archives();
 
-        $archives = Post::selectRaw('year(created_at) as year, monthname(created_at) as month,count(*) published')
-            ->groupBy('year','month')
-            ->orderByRaw('min(created_at) desc')
-            ->get()
-            ->toArray();
-
-        return view("post.index", compact('posts','archives'));
+        return view("post.index", compact('showPosts','archives'));
     }
 
     public function show(Post $post)

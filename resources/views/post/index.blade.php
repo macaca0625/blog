@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-8">
             <a href="/post/create"><button type="button" class="btn btn-warning">Create</button></a>
-            @foreach($posts as $post)
+            @foreach($showPosts as $post)
             <div class="post-preview">
                 <a href="/post/{{ $post->id }}">
                     <h2 class="post-title">
@@ -39,7 +39,7 @@
 
             <!-- Pager -->
             <div class="clearfix">
-                {{ $posts->links() }}
+                {{ $showPosts->links() }}
             </div>
         </div>
         <div class="col-md-4">
